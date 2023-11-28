@@ -1,0 +1,41 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Groves 2013]{Groves2013}
+\abntrefinfo{Groves}{GROVES}{2013}
+{GROVES, Paul~D. \textbf{{Principles of GNSS, Inertial, and Multi-sensor
+  Integrated Navigation Systems}}. 2. ed. Boston: Artech House Publishers,
+  2013.
+ISBN 9781608070053. Dispon{\'\i}vel em:
+  \url{https://search.ebscohost.com/login.aspx?direct=true&db=e000xww&AN=753597&lang=pt-br&site=eds-live&scope=site.
+  Acesso em: 28 nov. 2021.}}
+
+\bibitem[Kajita et al. 2001]{Kajita2001}
+\abntrefinfo{Kajita et al.}{KAJITA et al.}{2001}
+{KAJITA, Shuuji; KANEHIRO, Fumio; KANEKO, Kenji; YOKOI, Kazuhito; HIRUKAWA,
+  Hirohisa. {The 3D linear inverted pendulum mode: A simple modeling for a
+  biped walking pattern generation}. In:  \textbf{IEEE International Conference
+  on Intelligent Robots and Systems}. [S.l.: s.n.], 2001. v.~1.}
+
+\bibitem[Lawrence 1998]{Lawrence1998}
+\abntrefinfo{Lawrence}{LAWRENCE}{1998}
+{LAWRENCE, Anthony. \textbf{{Modern Inertial Technology: Navigation, Guidance,
+  and Control}}. 2. ed. [S.l.]: Springer, 1998.}
+
+\bibitem[Ogata 2009]{Ogata2009}
+\abntrefinfo{Ogata}{OGATA}{2009}
+{OGATA, Katsuhiko. \textbf{{Modern Control Engineering}}. 5°. ed. [S.l.:
+  s.n.], 2009.
+ISBN 0136156738.}
+
+\bibitem[Spon et al. 2005]{Spon2005}
+\abntrefinfo{Spon et al.}{SPON et al.}{2005}
+{SPON, Mark~W.; HUTCHINSON, Seth; VIDYASAGAR, M. \textbf{{Robot Modeling and
+  Control}}. 1°. ed. [S.l.: s.n.], 2005.
+ISBN 0471649902.}
+
+\end{thebibliography}

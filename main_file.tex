@@ -1,0 +1,170 @@
+% definição tipo de documento
+\documentclass[
+12pt,       % tamanho da fonte
+openright,  % inicio documento a direita
+oneside,    % frente e verso
+a4paper,    % folha a4
+sumario = abnt-6027-2012, % Formatação do sumário: tradicional (estilo tradicional) ou abnt-6027-2012 (norma ABNT 6027-2012)
+chapter = TITLE,          % Títulos de capítulos em maiúsculas 
+%section = TITLE,
+pretextualoneside,        % Impressão dos elementos pré-textuais pretextualoneside em um lado da folha
+fontetimes,               % Fonte do texto: (times)
+% fontearial,                % Fonte do texto: (arial) 
+% fontecourier            % Fonte do texto: (courier), 
+% fontemodern,              % Fonte do texto: (lmodern - default latex)
+semrecuonosumario,        % Remoção do recuo dos itens no sumário (comente para adição do recuo, se estilo tradicional)
+legendascentralizadas,    % Alinhamento das legendas centralizado (comente para alinhamento à esquerda)
+pardeassinaturas,         % Assinaturas na folha de aprovação em até duas colunas (comente para em uma única coluna)
+linhasdeassinaturas,      % Linhas de assinaturas na folha de aprovação (comente para remover as linhas)
+english,french,spanish,
+brazil      % o ultimo idioma é o padrão do documento
+]{utfprct}
+% -----------------------------------------------------
+% pacotes utilizados no documento
+\usepackage[utf8]{inputenc} % codificação texto
+\usepackage[T1]{fontenc}    % codificação para adicionar acentuação
+\usepackage[brazil]{babel}  % suporte para portugues
+\usepackage{fancyhdr}       % cabeçalhos e notas de rodapé
+\usepackage{graphicx}       % incluir figuras
+\usepackage{geometry}       % configurar margens do documento
+\usepackage{indentfirst}    % Indenta o primeiro parágrafo de cada seção.
+% \usepackage{lmodern}        % fonte Latin Modern 
+\usepackage{bigdelim, booktabs, colortbl, longtable, multirow}      % Ferramentas para tabelas
+\usepackage{amssymb, amstext, amsthm, icomma}                       % Ferramentas para linguagem matemática
+\usepackage{pifont, textcomp, wasysym}                              % Simbolos texto
+\usepackage[normalem]{ulem}                                         % Sublinhar texto
+\usepackage[alf]{abntex2cite}                                       % Citações padrão ABNT
+
+
+% -----------------------------------------------------
+% comandos adicionais
+\newcommand{\cpp}{\texttt{C$++$}}       % escrever C++
+\newcommand{\ds}{\displaystyle}         % Tamanho normal das equações
+\newcommand{\bsym}[1]{\boldsymbol{#1}}  % Texto no modo matemático em negrito
+\newcommand{\mr}[1]{\mathrm{#1}}        % Texto no modo matemático normal (não itálico)
+\newcommand{\pare}[1]{\left(#1\right)}  % Parênteses
+\newcommand{\colc}[1]{\left[#1\right]}  % Colchetes
+\newcommand{\nomeequacao}{Equação}
+\newcommand{\nomeequacoes}{Equações}
+
+
+% -----------------------------------------------------
+% espaçamento entre um paragrafo e outro
+\setlength{\parskip}{0.2cm}
+
+% % -----------------------------------------------------
+% % ajuste de margens no documento 
+% \setlrmarginsandblock{3cm}{2cm}{*}
+% \setulmarginsandblock{3cm}{2cm}{*}
+% \checkandfixthelayout
+
+% -----------------------------------------------------
+% informações do tipo de documento
+\TipoDeDocumento{Trabalho de Conclusão de Curso}
+\NivelDeFormacao{Bacharelado}
+\TituloPretendido{Bacharel}
+
+% -----------------------------------------------------
+% informações da monografia
+
+% ------- título
+% Título do documento em PORTUGUÊS (resumo)
+\TituloEmMultiplasLinhas{Proposta de Projeto - \textit{Sir Galahad}}%d
+
+% Título do trabalho em INGLÊS (abstract)
+\TituloEmMultiplasLinhasIngles{Project proposal - Sir Galahad}
+
+% ------- autora da monografia
+\NomeDoAutor{Guilherme Pires Silva}
+\SobrenomeDoAutor{Silva}
+\PrenomeDoAutor{Guilherme Pires}
+
+\AtribuiAutorDois{true}%%
+\NomeDoAutorDois{Letícia Rodrigues Pinto}
+\SobrenomeDoAutorDois{Pinto}
+\PrenomeDoAutorDois{Letícia Rodrigues}
+
+\AtribuiAutorTres{false}%%
+
+% ------- orientador
+\AtribuicaoOrientador{Orientador}%% Atribuição "Orientador(a)"
+\TituloDoOrientador{Prof.}%% Título do(a) orientador(a)
+\NomeDoOrientador{Daniel Rossato de Oliveira}%% Nome completo do(a) orientador(a)
+
+% ------- coorientador
+%% Usado para citação: "\SobrenomeDoCoorientador, PrenomeDoCoorientador" (ex: "Doe, John" ou "Doe, J.")
+\AtribuiCoorientador{false}%% Insere ou remove o(a) coorientador(a): "true" ou "false"
+
+% ------ instituição
+\Instituicao{Universidade Tecnológica Federal do Paraná}
+\Institution{Universidade Tecnológica Federal do Paraná} % [abstract] Institution name (*nome sem traduzir é o recomendado para docs. da UTFPR)
+\SiglaInstituicao{UTFPR}
+
+\Departamento{Departamento Acadêmico de Eletrônica}
+\SiglaDepartamento{DAELN}
+\Curso{Engenharia da Computação, Engenharia Elétrica e Engenharia Mecatrônica}
+\Course{Computer Engineering, Electrical Engineering and Mechatronics Engineering}
+
+\Cidade{Curitiba}
+
+\Ano{2023}
+
+% ---------------------------------------------------------------------
+% folha de rosto
+\DescricaoDoDocumento{
+Proposta de projeto apresentado como requisito para aprovação na disciplina Oficina De Integração 2, do \imprimirppgoudepartamento, da \imprimirinstituicao\ (\imprimirsiglainstituicao).
+}
+
+% -----------------------------------------------------
+
+\begin{document}
+
+% pre textual ------------------------------------------
+% inclui capa do documento
+\incluircapa
+
+% formatação da pagina dos elementos pre-textuais
+\pretextual
+
+% tipo de licença na que aparece na folha de rosto
+\Licenca{CC-BY}
+
+% incluir folha de rosto
+\incluirfolhaderosto
+
+% resumo
+\include{preTextuais/resumo/resumo}
+
+% abstract
+\include{preTextuais/abstract/abstract}
+
+% lista de ilustrações
+\incluirlistadeilustracoes
+
+% incluir sumário
+\incluirsumario 
+
+% textual ------------------------------------------------
+\textual
+
+% capítulo 1 - introdução
+\include{textual/1_introducao/1_introducao}
+
+% capítulo 2 - fundamentação teórica
+\include{textual/2_fundamentaçao/fundamentacao}
+
+% capítulo 3 - metodologia
+\include{textual/3_metodologia/metodologia}
+
+% capítulo 4 - experimentos
+\include{textual/4_experimentos/experimentos}
+
+% capítulo 5 - cronograma
+\include{textual/5_cronograma/cronograma}
+
+% capítulo 6 - conclusão 
+\include{textual/6_conclusoes/conclusao}
+
+\arquivosdereferencias{PosTextual/Referencias/library}
+
+\end{document}

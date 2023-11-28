@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_file.aux
+A level-1 auxiliary file: preTextuais/resumo/resumo.aux
+A level-1 auxiliary file: preTextuais/abstract/abstract.aux
+A level-1 auxiliary file: textual/1_introducao/1_introducao.aux
+A level-1 auxiliary file: textual/2_fundamentaçao/fundamentacao.aux
+A level-1 auxiliary file: textual/3_metodologia/metodologia.aux
+A level-1 auxiliary file: textual/4_experimentos/experimentos.aux
+A level-1 auxiliary file: textual/5_cronograma/cronograma.aux
+A level-1 auxiliary file: textual/6_conclusoes/conclusao.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: abntex2-options.bib
+Database file #2: PosTextual/Referencias/library.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v-1.9.7           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 12 entries,
+            6714 wiz_defined-function locations,
+            1249 strings with 10656 characters,
+and the built_in function-call counts, 8840 in all, are:
+= -- 955
+> -- 148
+< -- 144
++ -- 240
+- -- 45
+* -- 499
+:= -- 1096
+add.period$ -- 25
+call.type$ -- 13
+change.case$ -- 73
+chr.to.int$ -- 33
+cite$ -- 5
+duplicate$ -- 646
+empty$ -- 623
+format.name$ -- 212
+if$ -- 1998
+int.to.chr$ -- 6
+int.to.str$ -- 3
+missing$ -- 174
+newline$ -- 31
+num.names$ -- 25
+pop$ -- 181
+preamble$ -- 1
+purify$ -- 40
+quote$ -- 0
+skip$ -- 958
+stack$ -- 1
+substring$ -- 305
+swap$ -- 236
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1
+warning$ -- 0
+while$ -- 33
+width$ -- 0
+write$ -- 88

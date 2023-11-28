@@ -1,0 +1,102 @@
+
+%! ---------- CAPÍTULO 2 -> FUNDAMENTAÇÃO TEÓRICA
+\chapter{Fundamentação teórica}
+
+O pêndulo invertido é um sistema dinâmico clássico amplamente estudado em teoria de controle e robótica. Ele consiste em um braço vertical, representando o pêndulo, montado em um ponto móvel horizontal \cite{Kajita2001}. Este sistema é intrinsecamente instável, pois pequenos desvios de sua posição vertical resultam em forças que ampliam esses desvios. \cite{Ogata2009}
+
+O desafio fundamental associado ao pêndulo invertido reside na capacidade de manter o equilíbrio em uma posição vertical, apesar da instabilidade inerente. Para controlar eficazmente um pêndulo invertido, são necessários algoritmos de controle que possam ajustar continuamente a posição do ponto de montagem para compensar quaisquer perturbações \cite{Spon2005}.
+
+O \textit{Sir Galahad}, sendo um robô equilibrista de duas rodas, compartilha princípios fundamentais com o pêndulo invertido. Ao mover-se, ele deve constantemente ajustar sua posição para evitar quedas. Isso requer algoritmos de controle sofisticados que levam em consideração variáveis como aceleração, inclinação e feedback sensorial para manter o equilíbrio dinâmico.
+
+
+%! --------- 2.2 -> 
+
+
+
+
+
+
+
+
+
+\section{Controle}
+
+Para que o robô seja capaz de se equilibrar é preciso que exista algum tipo de controle, neste caso o controlador integral derivativo (PID). A ideia básica para o PID é regular propriedades de um sistema através da informação fornecida por um sensor. Para realizar isso o PID utiliza da combinação de três fatores: Proporcional, Integral e Derivativo.
+Na resposta do proporcional, tem-se o fator erro sendo multiplicado por uma constante Kp. Esta constante determina a taxa de resposta de saída para o sinal. Na resposta integral tem-se uma constante Ki como fator de proporcionalidade ao erro acumulado num determinado período de tempo, por isso integrativo. Enquanto na resposta derivativa tem-se então uma constante Kd que representa a magnitude da variação do erro ao controle.
+O erro consiste na diferença entre o valor de referência, também conhecido como \textit{set point}, e o valor dado pelo sensor ou variável de processo. Outros termos que são importantes quando analisarmos o desempenho e comportamento do controle são:
+\textit{Rise Time} – Tempo que demora para o sistema leva para ir de 10\% a 90\% do \textit{set point}
+\textit{Overshoot} – Valor em que a variável de processo ultrapassa o \textit{set point}, também pode ser expresso em porcentagem
+\textit{Setlling Time} – Tempo que demora para a variável de processo estabilizar num valor próximo (normalmente em até 5\%) do \textit{set point}
+\textit{Steady-State Error} – Diferença final entre o \textit{set point} e a variável de processo.
+considerando todos esses fatores tem-se uma prévia sobre a influência dos valores destes parâmetros para o funcionamento da função de equilíbrio do motor.
+
+\subsection{PWM}
+
+Uma parte muito relevante do projeto se da exatamente em como controlar a velocidade dos motores para que o robô se comporte de uma maneira especifica, neste caso os dois motores DC devem manter o equilíbrio e o servo motor deve subir e descer de acordo com a presença do alvo.
+
+Para esse controle é usado então a modulação por largura de pulso (PWM). O PWM, de forma simples, consiste em determinar por quanto tempo um certo dispositivo ou componente fica "ligado" controlando a potencia entregue ao mesmo. O PWM é dado pela equação abaixo:
+
+\begin{equation}
+    DutyCycle = \frac{100\times L_p}{T}
+\label{PWM}
+\end{equation}
+
+Onde:
+
+\begin{itemize}
+\item DutyCycle - Valor expresso em porcentagem e demonstra o valor médio da potencia em relação ao seu valor de máximo.
+\item $L_p$ - Largura do pulso, tempo em que o sinal está "ligado".
+\item T - Período, duração para um ciclo de onda.
+\end{itemize}
+
+Para os motores DC a potencia aplicada a eles é diretamente proporcional a velocidade e através do DutyCycle é possível manipular a potencia média do motor, ou seja, para controlar a velocidade basta deixar o motor "ligado" por um determinado tempo que seja de interesse.
+
+Já no caso do servo motor a LarguraDoPulso determina a posição (angulo) em que ele se encontra. Os valores para as posições, na maioria dos servo motores, são padronizadas para 0,6 ms para $0º$, 1,5 ms para $90º$ e 2,4 para $180º$, tudo isso num Periodo de 20 ms.
+
+\section{Sensores}
+
+Uma importante parte sobre os dispositivos eletrônicos é o uso de sensores. Eles são responsáveis por obter informações do meio, com as quais um equipamento pode ser realmente considerado um dispositivo capaz de interagir de forma inteligente e responsiva. Para este projeto foram usados uma câmera, giroscópio e acelerômetro.
+
+\subsection{Câmera}
+
+A obtenção de imagens foi um fator essencial para o funcionamento do protótipo. Responsável pela identificação do alvo, feita através do processamento digital das imagens capturadas.
+
+Para que o protótipo seja capaz de reconhecer seu alvo foi preciso que seja programado para tal tarefa. Neste caso será utilizada Python e a biblioteca OpenCV, que nos possibilita trabalhar com imagens e vídeos.
+
+Como resultado da pesquisa para reconhecer imagens ficou evidente alguns conceitos importantes afim de concretizar a tarefa. São estes:
+
+\begin{itemize}
+    \item Binarização de imagem
+    \item Suavização de imagem
+\end{itemize}
+
+A binarização de imagem é um conceito simples que se trata de criar uma segunda imagem, uma máscara, onde se faz uma análise na primeira imagem e todos os pixels que satisfazerem certa condição se tornam brancos (1), enquanto os demais ficam pretos (0). Assim, o resultado é uma máscara em preto e branco que facilita a manipulação ou tratamento da imagem original. Neste caso a condição para a binarização consiste na cor do pixel estar dentro de uma faixa de cor desejada ou não.
+
+A suavização de imagem se trata da aplicação de algum filtro sobre a imagem, como por exemplo borrar. Existem diversos tipos de filtros que podem ser aplicados sobre as imagens, mas aqui estamos interessados em tratar a máscara obtida na binarização afim de melhorar o resultado final, então temos algumas operações como Erosion, Dilation, Opening, Closing e Morphological Gradient, todas disponíveis na OpenCV.
+
+%TODO: IMAGEM TESTE DE RECONHECIMENTO
+% \begin{figure}[!htb]
+% 	\centering
+% 	\includegraphics[width=0.6\textwidth]{camera.png}% <- formatos PNG, JPG e PDF
+% 	\caption[Imagem de teste]{Imagem gerada no teste de reconhecimento.}
+% 	\fonte{Autoria própria.}
+% 	\label{fig:sbroriginal}
+% \end{figure}
+
+\subsection{Sensor inercial}
+
+Para obtenção dos dados necessários à regulagem dos motores das rodas, necessitou-se o uso de um Sensor BNO055, que possui várias funções, dentre elas as de giroscópio e acelerômetro.
+
+Sensores inerciais são dispositivos que desempenham um papel crucial na navegação autônoma de robôs. Eles se baseiam na primeira lei de Newton, a inércia, para medir as forças que atuam no robô, incluindo a aceleração, que é detectada pelos acelerômetros, e a velocidade angular, que é medida pelos giroscópios. Esses sensores são frequentemente integrados em uma única unidade conhecida como Unidade de Medição Inercial (IMU) \cite{Groves2013}.
+
+Um dos sensores que formam uma IMU é o acelerômetro, de características proprioceptivo e passivo, seu funcionamento consiste em uma massa de prova de um material sensível à aceleração. Esse material é frequentemente um pequeno microchip chamado microeletromecânico (MEMS) em que há pequenas estruturas sensíveis à aceleração que se deformam quando o chip é acelerado alterando sua capacitância \cite{Lawrence1998}. A faixa de aceleração do acelerômetro é fornecida em função da gravidade, representada pela letra \textit{g}, onde \textit{1g} equivale à 9,80665 m/s. 
+
+Outro componente crucial da IMU é o giroscópio, projetado para medir a taxa de rotação ou a velocidade angular do robô. Assim como o acelerômetro, o giroscópio faz parte da unidade de medição inercial e opera com base no princípio da conservação do momento angular. De acordo com esse princípio, um objeto em rotação tende a continuar girando a uma taxa constante, a menos que uma força externa atue sobre ele. O giroscópio contém um rotor (\ref{fig: giroscopio}) que gira a uma velocidade constante. Quando o robô gira ou vira, a tendência do rotor em manter sua orientação no espaço cria uma força que pode ser medida e usada para determinar a taxa de rotação \cite{Groves2013}.
+
+\subsection{Raspberry Pi}
+
+TODO: especificação rasp
+
+\subsection{ESP32}
+
+TODO: especificação esp

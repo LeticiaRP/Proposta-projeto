@@ -1,0 +1,30 @@
+\ifglsentryexists{sigla}{}%
+{%
+\gls@defglossaryentry{sigla}%
+{%
+name={Sigla Completa},%
+sort={Sigla Completa},%
+type={acronym},%
+first={Descrição da Sigla\glsspace (Sigla Completa)},%
+firstplural={Descrição da Siglas\glsspace (Sigla Completas)},%
+text={Sigla Completa},%
+plural={Sigla Completas},%
+description={Descrição da Sigla},%
+descriptionplural={Descrição da Siglas},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Descrição da Sigla},%
+longplural={Descrição da Siglas},%
+short={Sigla Completa},%
+shortplural={Sigla Completas},%
+counter={page},%
+parent={},%
+%
+}%
+}%

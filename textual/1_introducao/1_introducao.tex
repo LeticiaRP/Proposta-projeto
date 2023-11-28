@@ -1,0 +1,256 @@
+% capítulo 1 - introdução
+% ------------------------------
+% estrutura do capítulo
+% 1. Introdução
+% 1.1 Considerações iniciais
+% 1.2 Objetivos
+%     1.2.1 Objetivo geral 
+% 1.3 Justificativa
+% 1.4 Declaração do escopo de alto nível
+%     1.4.1 Requisitos funcionais
+%     1.4.2 Requisitos não-funcionais
+% 1.5 Materiais e Métodos
+% 1.6 Integração
+% 1.7 Análise de Riscos
+% 1.8 Estrutura do trabalho
+% 1.9 Cronograma
+% -------------------------------
+
+% 1 ------------- introdução
+\chapter{Introdução}\label{cap:introducao}
+
+Nesta seção introdutória apresentamos o projeto \textit{Sir Galahad}, um robô equilibrista de duas rodas, uma ideia que une a robótica e o controle de sistemas dinâmicos. Nosso enfoque reside em desenvolver um robô capaz de manter seu equilíbrio enquanto se movimenta em ambientes diversos. Ao longo deste documento, examinaremos os objetivos, justificativas e escopo do projeto, além de destacar a importância desse tipo de tecnologia na busca por soluções autônomas e versáteis.
+
+% 1.1 ----------- considerações iniciais
+\section{\textbf{Considerações iniciais}}
+
+Nesta seção, exploramos o contexto que motiva a criação do projeto \textit{Sir Galahad}. A busca por um robô equilibrista de duas rodas, capaz de buscar e atingir um alvo, de forma que este trabalho combine conceitos, como de controle dinâmico, fusão de sensores e integração de sistemas. 
+
+A criação de um robô que equilibra-se sobre duas rodas, de forma análoga a um pêndulo invertido, desafia os paradigmas convencionais da mobilidade robótica. Esta iniciativa alinha-se à busca por soluções tecnológicas que, além de atender necessidades práticas, inspiram a exploração dos limites da engenhosidade humana. Neste contexto, a motivação diante da escolha do projeto  \textit{Sir Galahad} é permeada por questões técnicas, científicas e criativas. 
+
+Este trabalho se propõe a detalhar o projeto, desde suas premissas até sua concretização. Ao explorar as considerações iniciais que permeiam \textit{Sir Galahad}. 
+
+% 1.2 ----------- objetivos
+\section{\textbf{Objetivos}}
+Os objetivos deste projeto refletem uma busca coerente por resultados concretos que aliam a funcionalidade técnica com as expectativas criativas. Compreender e atender esses objetivos é fundamental para avaliar o sucesso do projeto proposto.
+
+% 1.2.1 ----------- objetivo geral
+\subsection{Objetivo geral}
+% no maximo 3 linhas 
+O objetivo geral deste trabalho é o projeto e implementação de um robô diferencial de duas rodas, equilibrista, que deve ser capaz de procurar e identificar um alvo (previamente definido),  combinando controle dinâmico, sensoriamento e integração de sistemas.
+
+% 1.3 ----------- justificativa
+\section{\textbf{Justificativa}}
+
+A criação do projeto \textit{Sir Galahad} é motivada pela busca por avanços na robótica e suas aplicações práticas. Ao  desenvolver um equilibrista de duas rodas, podemos explorar o potencial da robótica em situações desafiantes, contribuindo para o conhecimento de controle e sensoriamento.
+
+A capacidade do \textit{Sir Galahad} de buscar, identificar e atingir alvos tem implicações práticas em inspeção e monitoramento, além de ser uma expressão da criatividade humana na tecnologia robótica.
+
+\section{\textbf{Integração}}
+Discutiremos aqui as matérias cujos conceitos são de suma importância para o desenvolvimento do projeto. 
+\begin{itemize}
+   \item Para o desenvolvimento do \textit{software}
+      \begin{itemize}
+         \item Fundamentos de programação
+         \item Análise e projeto de sistemas
+         \item Engenharia de \textit{software}
+         \item Robótica móvel 
+         \item Sistemas inteligentes
+      \end{itemize}
+   \item Para o desenvolvimento da eletrônica
+      \begin{itemize}
+         \item Eletrônica geral
+         \item Circuitos digitais
+         \item Desenho técnico aplicado 
+         \item Desenho eletrônico
+      \end{itemize}
+   \item Para a sintonização do sistema de controle: 
+      \begin{itemize}
+         \item Controle 1 
+         \item Tópicos especiais em controle 
+      \end{itemize}
+   \item Para o desenvolvimento da mecânica
+      \begin{itemize}
+         \item Desenho técnico 
+         \item Desenho de máquinas 1
+         \item Desenho de máquinas 2
+      \end{itemize}
+\end{itemize}
+
+
+% 1.4 ----------- declaração do escopo de alto nível
+\section{\textbf{Declaração do escopo de alto nível}}
+
+O protótipo criado no projeto consiste em um veículo autônomo que deve detectar um alvo ou objetivo por meio de reconhecimento de imagem e se locomover em direção à ele enquanto se equilibra sobre duas rodas como um pêndulo invertido.
+Não está dentro do escopo do projeto a navegação em ambientes externos, sobre terrenos não planos ou que possuam quaisquer tipos de obstáculos que possam obstruir a navegação.
+
+% 1.4.1 ----------- requisitos funcionais
+\subsection{Requisitos funcionais}
+
+RF1: Se manter em equilíbrio sobre duas rodas estando parado ou em movimento em uma superfície plana em um ambiente fechado.
+
+RF2: Detectar um alvo de formato, tamanho e cor previamente determinados em um ambiente bem iluminado.
+
+RF3: Se locomover em direção ao alvo designado contanto que o terreno seja regular e não existam obstáculos em seu caminho.
+
+RF4: Sinalizar que chegou perto ou atingiu o alvo/objetivo.
+
+
+% 1.4.2 ----------- requisitos não-funcionais
+\subsection{Requisitos não-funcionais}
+
+RNF1: O controle do equilíbrio será feito utilizando dados captados por sensores como acelerômetro, giroscópio e magnetômetro.
+
+RNF2: O alvo deve ser detectado utilizando processamento de imagem.
+
+RNF3: Inicialmente o alvo a ser detectado será uma bola de tênis.
+
+RNF4: O controle e processamento de imagem será feito por um Raspberry Pi 4.
+
+RNF5: Os sensores serão controlados por um ESP32.
+
+RNF6: Ao se aproximar ou atingir o alvo, o robô deverá fazer um alerta visual para informar que a operação foi concluída.
+
+RNF7: A linguagem utilizada para controlar o robô será Python.
+
+RNF8: Os dois motores serão acionados por Ponte H que será controlada pelo ESP32.
+
+% 1.5 ----------- materiais e métodos
+\section{\textbf{Materiais e métodos}}
+Nesta seção, descrevemos os materiais e custos esperados, além da abordagem metodológica adotada para o desenvolvimento do robô equilibrista.
+
+\textbf{Materiais:} Abaixo estão listados os materiais previstos para a realização do projeto, os itens destacados com (*) já são de posse dos membros do projeto, portanto não somaram aos custos esperados. 
+
+\begin{tabframed}[h]%% Ambiente tabframed
+   %\captionsetup{width=0.5\textwidth}%% Largura da legenda
+   \caption{Materiais utilizados no desenvolvimento do sistema}%% Legenda
+   \label{quad:exemplo1}%% Rótulo
+   \renewcommand{\arraystretch}{1.5}
+   \begin{tabular}{|l|l|l|l|l}
+   \cline{1-4}
+   \textbf{Materiais} & \textbf{Valor unitário (R\$)} & \textbf{Quantidade} & \textbf{Valor total (R\$)} \\ 
+    
+      \hline
+      \href{https://produto.mercadolivre.com.br/MLB-2004934384-lip0-3s-111-v-1500-mah-3s-_JM?matt_tool=68334988&matt_word=&matt_source=google&matt_campaign_id=14300471977&matt_ad_group_id=127503848075&matt_match_type=&matt_network=g&matt_device=c&matt_creative=542969655996&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=542516090&matt_product_id=MLB2004934384&matt_product_partition_id=1801247246545&matt_target_id=pla-1801247246545}{Power Banck 1000mAh} & 84,90 & 1 & 84,90 \\
+
+      \hline 
+      \href{https://www.aliexpress.com/item/32223093678.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=21099436311&aff_fcid=c234ac5e17824f20a319f9cc17dbaf2f-1692194363304-03902-_mPjn7Ro&tt=MG&aff_fsk=_mPjn7Ro&aff_platform=default&sk=_mPjn7Ro&aff_trace_key=c234ac5e17824f20a319f9cc17dbaf2f-1692194363304-03902-_mPjn7Ro&shareId=21099436311&businessType=ProductDetail&platform=AE&terminal_id=676ed690bcd2403d8bbab55c9f2e36b3&afSmartRedirect=y}{Drive Motor DRV8833} & 2,61 & 2 &	5,22 \\
+   
+      \hline 
+      \href{https://shopee.com.br/product/534679327/14372089266}{(*) Micro Servo MG90S}	& 13,00 & 1 & 13,00 \\
+
+      \hline
+      \href{https://www.makerhero.com/produto/raspberry-pi-4-model-b/}{(*) Raspberry Pi 4 Model B+} & 698,15 & 1 & 698,15 \\
+
+      \hline
+      \href{https://shopee.com.br/product/550918841/11054519654}{(*) Esp32} & 23,31 & 1 & 23,31 \\
+
+      \hline
+      Custos de impressão 3D & 75,00 & 1 & 75,00 \\
+
+      \hline
+      \href{https://pt.aliexpress.com/item/1005001279982165.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=21106393547&aff_fcid=0a6046e63fd945d7a1d698fe1e129e32-1692194250357-01162-_mMVW6Jk&tt=MG&aff_fsk=_mMVW6Jk&aff_platform=default&sk=_mMVW6Jk&aff_trace_key=0a6046e63fd945d7a1d698fe1e129e32-1692194250357-01162-_mMVW6Jk&shareId=21106393547&businessType=ProductDetail&platform=AE&terminal_id=676ed690bcd2403d8bbab55c9f2e36b3&afSmartRedirect=y}{Motor com encoder e roda JGA25-370}	& 34,25	 & 2 & 68,50 \\
+
+      \hline
+      \href{https://produto.mercadolivre.com.br/MLB-2004934384-lip0-3s-111-v-1500-mah-3s-_JM?matt_tool=68334988&matt_word=&matt_source=google&matt_campaign_id=14300471977&matt_ad_group_id=127503848075&matt_match_type=&matt_network=g&matt_device=c&matt_creative=542969655996&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=542516090&matt_product_id=MLB2004934384&matt_product_partition_id=1801247246545&matt_target_id=pla-1801247246545}{(*) Bateria LiPo 3s 1500 mAh} & 119,99 & 1 & 119,99 \\
+
+      \hline
+      \href{https://pt.aliexpress.com/item/1005005915264178.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=21100114064&aff_fcid=9b62215bdd524891bba0b98b5bbb55e5-1692194179415-09393-_mKQfDDM&tt=MG&aff_fsk=_mKQfDDM&aff_platform=default&sk=_mKQfDDM&aff_trace_key=9b62215bdd524891bba0b98b5bbb55e5-1692194179415-09393-_mKQfDDM&shareId=21100114064&businessType=ProductDetail&platform=AE&terminal_id=676ed690bcd2403d8bbab55c9f2e36b3&afSmartRedirect=y}{Sensor Inercial BNO055 + BMP280, SEN0253} & 361,40 & 1 & 361,40 \\
+    
+      \hline
+      \href{https://pt.aliexpress.com/item/1005003954117993.html?srcSns=sns_Copy&spreadType=socialShare&bizType=ProductDetail&social_params=21106405512&aff_fcid=ecdaa74a5af14122ba08116816bff22f-1692194368880-06711-_mttWAZ0&tt=MG&aff_fsk=_mttWAZ0&aff_platform=default&sk=_mttWAZ0&aff_trace_key=ecdaa74a5af14122ba08116816bff22f-1692194368880-06711-_mttWAZ0&shareId=21106405512&businessType=ProductDetail&platform=AE&terminal_id=676ed690bcd2403d8bbab55c9f2e36b3&afSmartRedirect=y}{Câmera}	& 59,32	& 1 & 59,32 \\
+
+      \hline
+
+   \end{tabular}
+   \fonte{Autoria própria}%% Fonte
+   \end{tabframed}
+
+\textbf{Métodos:} A metodologia adotada para o desenvolvimento do robô equilibrista "Sir Galahad" segue as etapas abaixo:
+
+\textbf{Definição de Requisitos:}
+\begin{itemize}
+   \item  Identificação dos requisitos funcionais e não-funcionais do robô, considerando busca, identificação e atingimento de alvos, além de equilíbrio dinâmico e precisão de movimento.
+\end{itemize}
+
+\textbf{Desenvolvimento do Software:}
+\begin{itemize}
+   \item Utilização da Raspberry Pi para implementação de partes do software de alto nível, utilizando a linguagem Python para o controle do robô e processamento de imagem.
+   \item Integração do microcontrolador ESP32 para as camadas mais baixas do software, incluindo a leitura de dados dos sensores inerciais e controle dos motores.
+\end{itemize}
+
+\textbf{Modelagem Mecânica:}
+\begin{itemize}
+   \item Utilização do software SolidWorks para a modelagem 3D detalhada da estrutura do robô.
+   \item Garantia de equilíbrio e resistência estrutural, além de validação da ergonomia e das dimensões do robô virtualmente antes da fabricação.
+\end{itemize}
+
+\textbf{Fabricação e Montagem:}
+\begin{itemize}
+   \item Fabricação da estrutura mecânica por meio de manufatura aditiva, assegurando leveza e precisão.
+   \item Montagem dos componentes eletrônicos na estrutura física, levando em conta distribuição de peso e acessibilidade para manutenção.
+\end{itemize}
+
+\textbf{Projeto Eletrônico:}
+\begin{itemize}
+   \item Utilização do software Flux para projetar o circuito eletrônico, incluindo os componentes necessários para sensores, microcontroladores e motores.
+   \item Garantia de conexões adequadas e otimização da eficiência energética.
+\end{itemize}
+
+\textbf{Testes e Ajustes:}
+\begin{itemize}
+   \item Realização de testes contínuos para verificar a capacidade de equilíbrio, precisão de movimento e detecção de alvos.
+   \item Ajustes nos algoritmos de controle e nos parâmetros dos sensores para aprimorar o desempenho do robô.
+\end{itemize}
+
+\textbf{Validação e Avaliação:}
+\begin{itemize}
+   \item Validação final por meio de testes de campo e avaliação dos resultados obtidos em relação aos objetivos propostos.
+   \item Comparação do desempenho do "Sir Galahad" com os critérios estabelecidos e considerações finais sobre o projeto.
+
+\end{itemize}
+
+% 1.7 ----------- analise de riscos 
+\section{\textbf{Análise de riscos}}
+A análise de riscos desempenha um papel crucial na identificação e previsão de possíveis problemas que podem surgir durante o desenvolvimento do projeto. Na Tabela de Riscos, realizamos um levantamento abrangente dos principais problemas, avaliando cada um deles com base em critérios essenciais. Esses critérios incluem a probabilidade de ocorrência, a gravidade e o impacto do problema, bem como a facilidade de resolução e sua viabilidade.
+
+Aqui está uma explanação detalhada de cada coluna da Tabela de Riscos:
+
+\begin{itemize}
+   \item \textbf{Identificadores e Descrições:} As primeiras duas colunas numeram e descrevem cada possível falha ou problema que pode afetar o sistema.
+   \item \textbf{Probabilidade de Ocorrência:} A terceira coluna avalia a probabilidade de o problema acontecer, variando de "1" (baixa probabilidade) a "5" (alta probabilidade).
+   \item \textbf{Gravidade do Problema:} A quarta coluna atribui um valor de gravidade ao problema, indo de "1" (impacto mínimo) a "5" (impacto significativo).
+   \item \textbf{Dificuldade de Resolução:} A quinta coluna reflete a facilidade ou dificuldade em resolver o problema, variando de "1" (dificuldade alta) a "5" (dificuldade baixa).
+   \item \textbf{Estratégia de Resolução:} A coluna subsequente sugere possíveis medidas para lidar com cada problema após sua ocorrência. Essas medidas visam resolver o problema, mas o projeto também adota ações preventivas para antecipar sua aparição.
+   \item \textbf{Viabilidade Individual:} A última coluna representa a viabilidade de cada problema, calculada como o produto da probabilidade e da gravidade. Se esse valor for 13 ou superior, a viabilidade do projeto pode ser comprometida. Nesse caso, a solução proposta deve ser reavaliada para garantir uma relação mais favorável entre probabilidade e impacto, aumentando a viabilidade e reduzindo o risco.
+   
+\end{itemize}
+
+No Quadro \ref*{quad:analise_riscos} se encontra o levantamento de riscos que podem ou não ocorrer ao longo do desenvolvimento do projeto, e o plano de ação respectivo em caso. 
+
+\begin{tabframed}[h]
+   \caption{Análise de Riscos}
+   \label{quad:analise_riscos}
+   \renewcommand{\arraystretch}{1.5}
+   \small
+   \begin{tabular}{|l|p{2.5cm}|l|l|l|p{2.5cm}|l|}
+   \cline{1-7}
+   \textbf{N°} & \textbf{Risco} & \textbf{Probabilidade} & \textbf{Gravidade} & \textbf{Resolução}  &  \textbf{Estratégia de ação} &  \textbf{Viabilidade} \\ \cline{1-7}
+    1 & Falha na Detecção de Alvos & 4 & 3 & 3 & Aprimorar algoritmos de detecção, considerar redundância de sensores & Viável \\ \cline{1-7}
+    2 & Dificuldades de Equilíbrio & 3 & 4 & 4 & Desenvolver algoritmos robustos de controle de equilíbrio, otimizar distribuição de peso & Viável \\ \cline{1-7}
+    3 & Colisão com Obstáculos & 3 & 3 & 3 & Implementar sensores de proximidade e algoritmos de evasão de obstáculos & Viável \\ \cline{1-7}
+    4 & Complexidade de Integração de Hardware e Software & 4 & 3 & 4 & Abordagem modular, testes frequentes de integração & Viável \\ \cline{1-7}
+    5 & Desafios na Fabricação de Componentes & 2 & 4 & 3 & Colaboração com especialistas, prototipagem e iterações & Viável \\ \cline{1-7}
+    6 & Incompatibilidade entre Componentes Eletrônicos & 3 & 3 & 4 & Testes prévios de compatibilidade, uso de componentes confiáveis & Viável \\ \cline{1-7}
+    7 & Queima de Componentes Eletrônicos & 3 & 4 & 3 & Proteção contra picos de tensão, testes de carga elétrica & Viável \\ \cline{1-7}
+    8 & Atraso na Entrega de Componentes & 4 & 3 & 3 & Pedidos antecipados, comunicação com fornecedores, estoque de segurança & Viável \\ \cline{1-7}
+    9 & Calibração Incorreta dos Sensores & 3 & 3 & 3 & Implementar procedimentos de calibração rigorosos, verificar e ajustar regularmente os sensores & Viável \\ \cline{1-7}
+    10 & Interferência de Ambiente & 2 & 2 & 3 & Realizar testes em diferentes ambientes, isolar componentes sensíveis & Viável \\ \cline{1-7}
+   \end{tabular}
+   \fonte{Autoria própria}
+   \end{tabframed}
+
+
+% 1.9 ----------- cronograma 
+\section{\textbf{Cronograma}}
+As informações sobre o projeto estão centralizadas em sua página do \href{https://www.notion.so/Sir-Galahad-d9482e0c1ac040d4a7b6bf2bfb223bff}{\textcolor{blue}{Notion}}, e o cronograma pode ser visto em detalhes por meio do \href{https://www.notion.so/59f60f78a3d144e7a52582be31b53f8d?v=2f55205b8da0482ebcb1618c6ef6c0b5}{\textcolor{blue}{link}}. 
